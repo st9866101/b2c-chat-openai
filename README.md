@@ -1,5 +1,5 @@
 # b2c-chat-openai
-AI電商平台
+AI電商平台  
 這是一個使用 React 和 React Router 構建的簡單電商平台。
 
 功能
