@@ -1,5 +1,5 @@
 // 你是個React JS 工程師　幫我編寫App.js  使用 React router 包含首頁 登入 商品介紹 購物車頁 內容
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Products from './pages/Products';
@@ -12,17 +12,32 @@ import { CartItem } from './types';
 
 function App() {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const storedCartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+    setCartItems(storedCartItems);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  }, [cartItems]);
+
 
   return (
     <BrowserRouter>
-      <Header />
+      <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+
         <Route path="/products" element={<Products cartItems={cartItems} setCartItems={setCartItems} />} />
-        <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} />} />
+
+        {isLoggedIn ? (
+          <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} />} />
+        ) : (<Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />)}
       </Routes>
+
       <ScrollToTopButton />
     </BrowserRouter>
   );

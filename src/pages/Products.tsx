@@ -15,21 +15,24 @@ export function Products({ cartItems, setCartItems }: ProductPageProps) {
     ]);
 
     useEffect(() => {
-        setProducts(prevProducts => prevProducts.map(product => {
-            const R = Math.floor(Math.random() * 256);
+        setProducts(prevProducts => prevProducts.map((product, index) => {
+            const R = 100
             return {
                 ...product,
-                image: `https://picsum.photos/id/${R}/150/150`
+                // https://picsum.photos/seed/${index}/400/400
+                image: `https://picsum.photos/seed/${index + 10}/150/150`
             };
         }));
     }, []);
 
     const handleAddToCart = (product: Product) => {
+        alert('Add to cart')
         const existingCartItemIndex = cartItems.findIndex((item) => item.product.id === product.id);
         if (existingCartItemIndex !== -1) {
             const updatedCartItems = [...cartItems];
             updatedCartItems[existingCartItemIndex].quantity += 1;
             setCartItems(updatedCartItems);
+
         } else {
             setCartItems([...cartItems, { product, quantity: 1 }]);
         }

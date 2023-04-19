@@ -1,6 +1,11 @@
 import { useState } from 'react';
 import { Box, Button, Container, TextField, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { useNavigate } from 'react-router-dom';
+
+type Props = {
+    setIsLoggedIn: (isLoggedIn: boolean) => void;
+};
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -9,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         justifyContent: 'center',
         minHeight: '100vh',
+        backgroundColor: '#f1f1f1',
     },
     form: {
         display: 'flex',
@@ -16,32 +22,69 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         maxWidth: 400,
         margin: theme.spacing(2),
+        padding: '30px',
+        backgroundColor: '#fff',
+        borderRadius: '10px',
+        boxShadow: '0px 0px 20px rgba(0, 0, 0, 0.1)',
     },
     input: {
         margin: theme.spacing(1),
+        width: '100%',
+        backgroundColor: '#f1f1f1',
+        borderRadius: '5px',
+        '& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
+            borderColor: '#f1f1f1',
+        },
+        '&:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
+            borderColor: '#333',
+        },
+        '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline': {
+            borderColor: '#333',
+        },
+        '& .MuiOutlinedInput-input': {
+            padding: '10px',
+        },
     },
     submitButton: {
         margin: theme.spacing(2, 0),
+        width: '100%',
+        borderRadius: '5px',
+        backgroundColor: '#333',
+        color: '#fff',
+        '&:hover': {
+            backgroundColor: '#555',
+        },
+    },
+    title_black: {
+        color: 'black'
     },
 }));
 
-function Login() {
+function Login({ setIsLoggedIn }: Props) {
     const classes = useStyles();
+    const navigate = useNavigate();
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        setIsLoggedIn(true);
         console.log(`username: ${username}, password: ${password}`);
-        // 執行登入邏輯
+        if (username === 'Vader' && password === '123456') {
+            navigate('/products');
+
+        }
+        else {
+            alert('帳號密碼錯誤')
+        }
     };
 
     return (
         <Container className={classes.container}>
             <Box>
-                <Typography variant="h3" component="h1">
-                    登入
+                <Typography variant="h3" component="h1" className={classes.title_black}>
+                    帳號登入
                 </Typography>
             </Box>
             <form onSubmit={handleSubmit} className={classes.form}>

@@ -16,6 +16,10 @@ import {
 } from '@material-ui/core';
 import { Menu as MenuIcon } from '@material-ui/icons';
 
+type Props = {
+    setIsLoggedIn: (isLoggedIn: boolean) => void;
+    isLoggedIn: boolean
+};
 const useStyles = makeStyles((theme) => ({
     toolbar: {
         display: 'flex',
@@ -41,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function Header() {
+function Header({ isLoggedIn, setIsLoggedIn }: Props) {
     const classes = useStyles();
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -80,36 +84,56 @@ function Header() {
                             onClose={handleDrawerClose}
                         >
                             <List className={classes.drawer}>
-                                <ListItem button component={Link} to="/login" onClick={handleDrawerClose}>
-                                    <ListItemText primary="登入" />
-                                </ListItem>
-                                <Divider />
+
                                 <ListItem button component={Link} to="/products" onClick={handleDrawerClose}>
                                     <ListItemText primary="產品頁" />
                                 </ListItem>
                                 <Divider />
-                                <ListItem button component={Link} to="/cart" onClick={handleDrawerClose}>
-                                    <ListItemText primary="查看購物車" />
+
+                                {isLoggedIn ?
+                                    <ListItem button component={Link} to="/cart" onClick={handleDrawerClose}>
+                                        <ListItemText primary="查看購物車" />
+
+                                    </ListItem>
+                                    :
+                                    <ListItem button component={Link} to="/login" onClick={handleDrawerClose}>
+                                        <ListItemText primary="登入" />
+                                    </ListItem>
+                                }
+                                {isLoggedIn && <ListItem button component={Link} to="/" onClick={() => {
+                                    setIsLoggedIn(false)
+                                }}>
+                                    <ListItemText primary="登出" />
                                 </ListItem>
+
+                                }
                             </List>
                         </Drawer>
                     </>
                 ) : (
                     <>
-                        <Typography variant="h6">
-                            <Link to="/login" className={classes.link}>
-                                登入
-                            </Link>
-                        </Typography>
+
                         <Typography variant="h6">
                             <Link to="/products" className={classes.link}>
                                 產品頁
                             </Link>
                         </Typography>
                         <Typography variant="h6">
-                            <Link to="/cart" className={classes.link}>
-                                查看購物車
-                            </Link>
+                            {isLoggedIn ?
+                                <Link to="/cart" className={classes.link}>
+                                    查看購物車
+                                </Link>
+                                :
+                                <Link to="/login" className={classes.link}>
+                                    登入
+                                </Link>
+                            }</Typography>
+                        <Typography variant="h6">
+                            {isLoggedIn && <Link to="/" className={classes.link} onClick={() => {
+                                setIsLoggedIn(false)
+                            }}>
+                                登出
+                            </Link>}
                         </Typography>
                     </>
                 )}
