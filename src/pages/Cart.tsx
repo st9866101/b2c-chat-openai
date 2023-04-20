@@ -32,7 +32,7 @@ export function Cart({ cartItems, setCartItems }: CartPageProps) {
     return (
         <Grid container spacing={2} style={{ height: 'calc(100% - 4rem)', padding: '2rem' }}>
             {cartItems.length === 0 ? (
-                <Grid item xs={12}>
+                <Grid item xs={12} style={{ height: '60vh' }}>
                     <Typography variant="h6">Your cart is empty</Typography>
                 </Grid>
             ) : (

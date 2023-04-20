@@ -60,7 +60,7 @@ function Header({ isLoggedIn, setIsLoggedIn }: Props) {
     };
 
     return (
-        <AppBar position="static">
+        <AppBar position="fixed">
             <Toolbar className={classes.toolbar}>
                 <Typography variant="h6">
                     <Link to="/" className={classes.link}>
@@ -135,6 +135,11 @@ function Header({ isLoggedIn, setIsLoggedIn }: Props) {
                                 登出
                             </Link>}
                         </Typography>
+                        {/* <Typography variant="h6">
+                            <Link to="/readme" className={classes.link} >
+                                個人資料
+                            </Link>
+                        </Typography> */}
                     </>
                 )}
             </Toolbar>
