@@ -1,4 +1,4 @@
-import { Box, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Typography, Button, Divider } from '@material-ui/core';
+import { Box, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 
@@ -148,60 +148,46 @@ function Home() {
                     </Grid>
                 ))}
             </Grid>
-            <Box sx={{ maxWidth: 800, mx: 'auto', py: 4 }}>
-                <Typography variant="h4" align="center" gutterBottom>
-                    東祺機電工業股份有限公司
-                </Typography>
-                <Divider style={{ margin: '0,4' }} />
+            {/*  */}
+            <Box className={classes.hero} mt={2}>
+                <Container maxWidth="md">
+                    <Typography variant={isMobile ? "h3" : "h1"} className={classes.heroText}>
+                        歡迎來到我們的網站
+                    </Typography>
+                    <Typography variant="h5" className={classes.heroText}>
+                        我們提供最優質的產品和服務，讓您享受一流的體驗
+                    </Typography>
+                    <Box className={classes.cta}>
+                        <Button variant="contained" color="primary" component={Link} to="/products">
+                            立即購買
+                        </Button>
+                    </Box>
+                </Container>
+            </Box>
+            <Container>
+                <Box my={8}>
+                    <Typography variant="h3" align="center" gutterBottom>
+                        關於我們
+                    </Typography>
+                    <Typography variant="body1" align="center" paragraph>
+                        我們是一家專注於提供高品質產品和服務的公司，致力於為客戶提供一流的體驗。我們的產品包括但不限於電子產品、家居用品和健身器材等。我們的團隊由一群專業的技術人員和熱情的客戶服務代表組成，致力於為客戶提供最好的產品和服務。
+                    </Typography>
+                    <Typography variant="body1" align="center" paragraph>
+                        我們的宗旨是提供最好的產品和服務，讓客戶享受一流的體驗。我們相信，只有通過不斷的創新和改進，才能夠實現這一目標。因此，我們不斷地優化我們的產品和服務，以滿足客戶不斷變化的需求。我們還會積極探索新的市場和商機，開發更多樣化的產品，為客戶帶來更多的選擇和價值。
+                    </Typography>
+                </Box>
+            </Container>
 
-                <Grid container spacing={3}>
-                    <Grid item xs={12} sm={6}>
-                        <Typography variant="subtitle1">
-                            公司地址：
-                        </Typography>
-                        <Typography>
-                            11075台北市信義區虎林街164巷36號2樓
-                        </Typography>
-                    </Grid>
-
-                    <Grid item xs={12} sm={6}>
-                        <Typography variant="subtitle1">
-                            聯繫方式：
-                        </Typography>
-                        <Typography>
-                            電話號碼：02-87809658 . 03-4514268
-                        </Typography>
-                        <Typography>
-                            傳真號碼：02-87809657
-                        </Typography>
-                        <Link to="mailto:" target="_blank" rel="noopener noreferrer">
-                            <Typography>
-                                Email：
-                            </Typography>
-                        </Link>
-                    </Grid>
-
-                    <Grid item xs={12}>
-                        <Typography variant="subtitle1">
-                            營業項目：
-                        </Typography>
-                        <Typography>
-                            東棋油壓電梯、東棋特殊電梯、熊牌客貨梯、乘客電梯、載貨電梯、送菜梯、汽車升降梯、油壓電梯、油壓工作台、樓高外牆洗窗機、停車設備、自動垂直系統設備、電梯零組件
-                        </Typography>
-                    </Grid>
-                </Grid>
-                <section className="section">
-                    <div className="container">
-                        <h3 className="title">公司簡介</h3>
-                        <p>
-                            東祺機電工業股份有限公司自1976年成立以來,一直秉持"服務至上","產品至上"及"品質至上"的經營理念,我們一直保持與國外優秀廠商建立合作關係,在日商熊牌電子公司與金子公司合作之下,藉由高科技的引進及經驗的累積,本公司提供顧客完整的銷售服務,從設計、製造、安裝、試車、維修,一貫專業的營運方式,以滿足顧客需求。
-                        </p>
-                        <p>
-                            致力於客梯、客貨梯、汽車升降機及自動垂直載送系統設備等。
-                        </p>
-                    </div>
-                </section>
-
+            {/*  */}
+            <Box >
+                <Box className={classes.hero}>
+                    <Typography variant="h3" className={classes.heroTitle}>
+                        常見問題
+                    </Typography>
+                    <Typography variant="body1" className={classes.heroSubtitle}>
+                        以下是我們收集整理的常見問題，如果您還有其他問題，歡迎聯繫我們的客服。
+                    </Typography>
+                </Box>
                 <Container maxWidth="lg" className={classes.container}>
                     <Grid container spacing={4}>
                         {faqList.map((faq) => (
@@ -220,38 +206,22 @@ function Home() {
                         ))}
                     </Grid>
                 </Container>
+                <Box className={classes.cta}>
+                    <Typography variant="h4" className={classes.ctaTitle}>
+                        立即加入我們
+                    </Typography>
+                    <Typography variant="body1" className={classes.ctaSubtitle}>
+                        加入我們，開啟您的AI之旅！
+                    </Typography>
+                    <Button variant="contained" color="primary" className={classes.ctaButton}>
+                        立即註冊
+                    </Button>
+                </Box>
 
-
-                <section className="section">
-                    <div className="container">
-                        <h3 className="title">分公司／經銷商</h3>
-                        <ul>
-                            <li>
-                                <strong>高雄公司</strong> 高雄市左營區文恩路133號之1
-                                <br />
-                                TEL: 07-3430035
-                            </li>
-                            <li>
-                                <strong>台中公司</strong> 台中市建國南路二段152號9樓之1
-                                <br />
-                                TEL: 04-22621735
-                            </li>
-                            <li>
-                                <strong>宜蘭公司</strong> 宜蘭縣冬山鄉義成路一段33號
-                                <br />
-                                TEL: 0912-409273
-                            </li>
-                        </ul>
-                    </div>
-                </section>
-
-                <section className="section">
-                    <div className="container">
-                        <h3 className="title">營業時間</h3>
-                        <p>週一至週五 上午8點半-下午5點半</p>
-                    </div>
-                </section>
             </Box>
+
+
+
         </Container>
     );
 }

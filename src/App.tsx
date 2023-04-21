@@ -26,6 +26,8 @@ function App() {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  const DefaultUser = 'Vader'
+  const DefaultPS = '123456'
   useEffect(() => {
     const storedCartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
     setCartItems(storedCartItems);
@@ -53,7 +55,10 @@ function App() {
         <Route path="/readme" element={<Readme />} />
         {isLoggedIn ? (
           <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} />} />
-        ) : (<Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />)}
+        ) : (<Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn}
+          DefaultUser={DefaultUser}
+          DefaultPS={DefaultPS}
+        />} />)}
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
 

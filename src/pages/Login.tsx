@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 
 type Props = {
     setIsLoggedIn: (isLoggedIn: boolean) => void;
+    DefaultUser: string,
+    DefaultPS: string
 };
 
 const useStyles = makeStyles((theme) => ({
@@ -60,7 +62,8 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-function Login({ setIsLoggedIn }: Props) {
+function Login({ setIsLoggedIn, DefaultUser
+    , DefaultPS, }: Props) {
     const classes = useStyles();
     const navigate = useNavigate();
 
@@ -71,7 +74,7 @@ function Login({ setIsLoggedIn }: Props) {
         event.preventDefault();
         setIsLoggedIn(true);
         console.log(`username: ${username}, password: ${password}`);
-        if (username === 'Vader' && password === '123456') {
+        if (username === DefaultUser && password === DefaultPS) {
             navigate('/products');
 
         }
