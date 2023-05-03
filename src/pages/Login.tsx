@@ -72,11 +72,9 @@ function Login({ setIsLoggedIn, DefaultUser
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        setIsLoggedIn(true);
-        console.log(`username: ${username}, password: ${password}`);
         if (username === DefaultUser && password === DefaultPS) {
             navigate('/products');
-
+            setIsLoggedIn(true);
         }
         else {
             alert('帳號密碼錯誤')

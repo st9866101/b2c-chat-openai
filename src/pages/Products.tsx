@@ -52,9 +52,7 @@ export function Products({ cartItems, setCartItems }: ProductPageProps) {
             style={{ height: 'calc(100% - 4rem)', padding: '2rem' }}>
             {products.map((product) => (
                 <Grid item
-                    justifyContent='center'
-                    alignItems="center"
-                    style={{ display: 'flex', flexDirection: 'column' }}
+                    style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}
                     key={product.id}
                     xs={12} sm={6} md={4}>
                     <img src={product.image} alt={product.name} />

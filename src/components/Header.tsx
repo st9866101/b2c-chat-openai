@@ -70,7 +70,7 @@ function Header({ isLoggedIn, setIsLoggedIn }: Props) {
                 </Typography>
                 {isMobile ? (
                     <>
-                        <IconButton
+                        {/* <IconButton
                             edge="start"
                             className={classes.menuButton}
                             color="inherit"
@@ -110,7 +110,7 @@ function Header({ isLoggedIn, setIsLoggedIn }: Props) {
 
                                 }
                             </List>
-                        </Drawer>
+                        </Drawer> */}
                     </>
                 ) : (
                     <>

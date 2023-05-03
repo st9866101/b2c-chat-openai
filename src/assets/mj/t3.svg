@@ -1,0 +1,7 @@
+<svg width="100" height="150" xmlns="http://www.w3.org/2000/svg">
+  <rect x="5" y="5" width="90" height="140" rx="10" fill="#fff" stroke="#000" stroke-width="5"/>
+    <!-- 三筒 -->
+<circle cx="30" cy="30" r="15" fill="#fff" stroke="#0b7a3b" stroke-width="2"/> <!-- 左上 -->
+<circle cx="50" cy="75" r="15" fill="#fff"  stroke-width="2" stroke="red"/>
+<circle cx="70" cy="120" r="15" fill="#fff" stroke="#0b7a3b" stroke-width="2"/>
+</svg>

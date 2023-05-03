@@ -1,6 +1,7 @@
 import { Box, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Typography, Button, Divider } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
+import ImageList from '../components/ImageList';
 
 const faqList = [
     {
@@ -125,8 +126,10 @@ function Home() {
             <Typography variant="body1" align="center" gutterBottom>
                 這是一個使用 React 和 React Router 構建的簡單電商平台
             </Typography>
-            <Grid container spacing={4}>
-                {Array.from({ length: 8 }).map((_, index) => (
+            <Grid container spacing={4} style={{ margin: '1rem 0' }}>
+
+                <ImageList />
+                {/* {Array.from({ length: 8 }).map((_, index) => (
                     <Grid item key={index} xs={12} sm={6} md={3}>
                         <Card className={classes.card}>
                             <CardActionArea>
@@ -146,7 +149,8 @@ function Home() {
                             </CardActionArea>
                         </Card>
                     </Grid>
-                ))}
+                ))} */}
+
             </Grid>
             <Box sx={{ maxWidth: 800, mx: 'auto', py: 4 }}>
                 <Typography variant="h4" align="center" gutterBottom>

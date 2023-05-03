@@ -35,7 +35,7 @@ const UserAvatar: React.FC<Props> = ({ username, onLogout }) => {
 
     return (
         <div>
-            <Avatar alt={username} src="/static/images/avatar/1.jpg" className={classes.avatar} onClick={handleClick} />
+            <Avatar alt={username} className={classes.avatar} onClick={handleClick} />
             <Popover anchorEl={anchorEl} keepMounted
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
