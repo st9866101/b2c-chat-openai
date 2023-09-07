@@ -1,7 +1,10 @@
 import { useState } from 'react';
 import { makeStyles } from "@material-ui/core/styles";
-import { Grid, Box } from "@material-ui/core";
+import { Grid, Box, Typography } from "@material-ui/core";
 import { checkWin } from "../utils/mahjongUtils";
+// import BlindSpotIcon from "./blind_spot_icon.svg";
+
+// import { ReactComponent as BlindSpotIcon } from './blind_spot_icon.svg'
 
 import t1 from "../assets/mj/t1.svg";
 import t2 from "../assets/mj/t2.svg";
@@ -118,6 +121,7 @@ const ImageList: React.FC = () => {
     }
 
     return (
+        // 原始
         <Box className={classes.root}>
             <Grid container spacing={3}>
                 <Grid item xs={12} sm={10} style={{ margin: '0 auto' }}>
@@ -149,7 +153,11 @@ const ImageList: React.FC = () => {
             <button onClick={handleClick}>檢查胡牌</button>
             {'這裡' + JSON.stringify(mjArray)}
 
+            {/* <BlindSpotIcon fill={'blue'}></BlindSpotIcon> */}
+
         </Box>
+        // 原始
+
     );
 };
 

@@ -24,7 +24,7 @@ function Footer() {
     return (
         <Box className={classes.footer}>
             <Typography variant="body2" className={classes.footerText}>
-                © COPYRIGHT © 2023 SINBON ELECTRONICS CO., LTD.ALL RIGHTS RESERVED.V1.1
+                © COPYRIGHT © 2023 Vader ELECTRONICS CO., LTD.ALL RIGHTS RESERVED.V1.1
             </Typography>
         </Box>
     );

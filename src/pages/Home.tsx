@@ -1,7 +1,6 @@
-import { Box, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Typography, Button, Divider } from '@material-ui/core';
+import { Box, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Typography, Divider } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
-import ImageList from '../components/ImageList';
 
 const faqList = [
     {
@@ -128,8 +127,7 @@ function Home() {
             </Typography>
             <Grid container spacing={4} style={{ margin: '1rem 0' }}>
 
-                <ImageList />
-                {/* {Array.from({ length: 8 }).map((_, index) => (
+                {Array.from({ length: 8 }).map((_, index) => (
                     <Grid item key={index} xs={12} sm={6} md={3}>
                         <Card className={classes.card}>
                             <CardActionArea>
@@ -149,7 +147,7 @@ function Home() {
                             </CardActionArea>
                         </Card>
                     </Grid>
-                ))} */}
+                ))}
 
             </Grid>
             <Box sx={{ maxWidth: 800, mx: 'auto', py: 4 }}>

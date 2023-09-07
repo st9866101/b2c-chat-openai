@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Grid, Typography, Button, IconButton, TextField } from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { CartItem } from '../types';

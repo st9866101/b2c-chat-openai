@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { BrowserRouter as BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Products from './pages/Products';
+import MahjongRules from './pages/MahjongRules';
 import Login from './pages/Login';
 import Cart from './pages/Cart';
 import Readme from './pages/Readme';
@@ -53,6 +54,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/b2c-chat-openai" element={<Home />} />
         <Route path="/products" element={<Products cartItems={cartItems} setCartItems={setCartItems} />} />
+        <Route path="/mahjong" element={<MahjongRules />} />
         <Route path="/readme" element={<Readme />} />
         {isLoggedIn ? (
           <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} />} />

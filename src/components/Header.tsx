@@ -68,6 +68,11 @@ function Header({ isLoggedIn, setIsLoggedIn }: Props) {
                         Home
                     </Link>
                 </Typography>
+                <Typography variant="h6">
+                    <Link to="/mahjong" className={classes.link}>
+                        Mahjong
+                    </Link>
+                </Typography>
                 {isMobile ? (
                     <>
                         {/* <IconButton
