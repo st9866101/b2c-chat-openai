@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import { Avatar, Menu, MenuItem, Popover, Box, Typography } from '@material-ui/core';
+import { makeStyles, createStyles } from '@material-ui/core/styles';
+import { Avatar, MenuItem, Popover } from '@material-ui/core';
 import { ExitToApp } from '@material-ui/icons';
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
     onLogout: () => void;
 }
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
     createStyles({
         avatar: {
             cursor: 'pointer',

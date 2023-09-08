@@ -116,7 +116,6 @@ const useStyles = makeStyles((theme) => ({
 
 function Home() {
     const classes = useStyles();
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     return (
         <Container className={classes.container}>
             <Typography variant="h3" component="h1" align="center" gutterBottom>

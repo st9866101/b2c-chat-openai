@@ -22,7 +22,6 @@ export function Products({ cartItems, setCartItems }: ProductPageProps) {
 
     useEffect(() => {
         setProducts(prevProducts => prevProducts.map((product, index) => {
-            const R = 100
             return {
                 ...product,
                 // https://picsum.photos/seed/${index}/400/400

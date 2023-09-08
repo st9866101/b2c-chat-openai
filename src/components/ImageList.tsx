@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { makeStyles } from "@material-ui/core/styles";
-import { Grid, Box, Typography } from "@material-ui/core";
-import { checkWin } from "../utils/mahjongUtils";
+import { Grid, Box } from "@material-ui/core";
+// import { checkWin } from "../utils/mahjongUtils";
 // import BlindSpotIcon from "./blind_spot_icon.svg";
 
 // import { ReactComponent as BlindSpotIcon } from './blind_spot_icon.svg'
@@ -25,7 +25,7 @@ import w7 from "../assets/mj/w7.svg";
 import w8 from "../assets/mj/w8.svg";
 import w9 from "../assets/mj/w9.svg";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     root: {
         flexGrow: 1,
         margin: "0 20px",
@@ -76,19 +76,19 @@ const ImageList: React.FC = () => {
         }
     };
     // 排序內容
-    const getRank = (name: string): number => {
-        const rankTable: { [key: string]: number } = {
-            t: 0,
-            w: 1,
-            b: 2,
-            s: 3
-        };
+    // const getRank = (name: string): number => {
+    //     const rankTable: { [key: string]: number } = {
+    //         t: 0,
+    //         w: 1,
+    //         b: 2,
+    //         s: 3
+    //     };
 
-        const prefix = name.charAt(0);
-        const number = parseInt(name.substring(1));
+    //     const prefix = name.charAt(0);
+    //     const number = parseInt(name.substring(1));
 
-        return rankTable[prefix] * 9 + number;
-    };
+    //     return rankTable[prefix] * 9 + number;
+    // };
     //用字串找圖片
     const getTileImage = (name: string): string | undefined => {
         const tile = mjS.find(tile => tile.name === name);
@@ -107,7 +107,7 @@ const ImageList: React.FC = () => {
     };
 
     function handleClick() {
-        const tiles = ["t1", "t2", "t3", "t4", "t5", "t6", "w4", "w5", "w6", "w7", "w8", "w9", "w2", "w2", "w2", "w3"];
+        // const tiles = ["t1", "t2", "t3", "t4", "t5", "t6", "w4", "w5", "w6", "w7", "w8", "w9", "w2", "w2", "w2", "w3"];
         // const result = canWinMahjong(tiles);
         // console.log("你可以胡牌！" + JSON.stringify(result));
         // if (result.canWin) {

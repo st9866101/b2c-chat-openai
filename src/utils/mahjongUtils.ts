@@ -80,8 +80,8 @@ function checkBasicWin(
         const count = tileCount[tile];
         if (count >= 2) {
             // 嘗試組成將牌
-            const remainingTiles = handTiles.filter((t) => t !== tile);
-            const groups = tryFormGroups(remainingTiles);
+            // const remainingTiles = handTiles.filter((t) => t !== tile);
+            // const groups = tryFormGroups(remainingTiles);
             // if (groups) {
             //     candidateGroups.push(groups.concat([[tile, tile]].flat()));
             // }
