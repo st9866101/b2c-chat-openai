@@ -1,4 +1,3 @@
-// 你是個React JS 工程師　幫我編寫App.js  使用 React router 包含首頁 登入 商品介紹 購物車頁 內容
 import { useState, useEffect } from 'react';
 import { BrowserRouter as BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
