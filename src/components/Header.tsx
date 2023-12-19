@@ -15,7 +15,7 @@ import {
     useTheme,
 } from '@material-ui/core';
 import { Menu as MenuIcon } from '@material-ui/icons';
-import UserAvatar from './UserAvatar';
+// import UserAvatar from './UserAvatar';
 
 type Props = {
     setIsLoggedIn: (isLoggedIn: boolean) => void;
@@ -90,10 +90,10 @@ function Header({ isLoggedIn, setIsLoggedIn }: Props) {
                             onClose={handleDrawerClose}
                         >
                             <List className={classes.drawer}>
-
+                                {/*
                                 <ListItem button component={Link} to="/products" onClick={handleDrawerClose}>
                                     <ListItemText primary="產品頁" />
-                                </ListItem>
+                                </ListItem> */}
                                 <Divider />
 
                                 {isLoggedIn ?
@@ -119,8 +119,7 @@ function Header({ isLoggedIn, setIsLoggedIn }: Props) {
                     </>
                 ) : (
                     <>
-
-                        <Typography variant="h6">
+                        {/* <Typography variant="h6">
                             <Link to="/products" className={classes.link}>
                                 產品頁
                             </Link>
@@ -140,7 +139,7 @@ function Header({ isLoggedIn, setIsLoggedIn }: Props) {
                                 setIsLoggedIn(false)
 
                             }} />}
-                        </Typography>
+                        </Typography> */}
                         {/* <Typography variant="h6">
                             <Link to="/readme" className={classes.link} >
                                 個人資料

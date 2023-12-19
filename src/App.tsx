@@ -6,6 +6,7 @@ import MahjongRules from './pages/MahjongRules';
 import Login from './pages/Login';
 import Cart from './pages/Cart';
 import Readme from './pages/Readme';
+import StockTable from './pages/StockTable';
 import NotFoundPage from './pages/NotFoundPage'
 import ScrollToTopButton from './components/ScrollToTopButton'
 import Header from './components/Header';
@@ -51,6 +52,8 @@ function App() {
       </Box>
       <Routes >
         <Route path="/" element={<Home />} />
+        <Route path="/stock" element={<StockTable />} />
+
         <Route path="/b2c-chat-openai" element={<Home />} />
         <Route path="/products" element={<Products cartItems={cartItems} setCartItems={setCartItems} />} />
         <Route path="/mahjong" element={<MahjongRules />} />
