@@ -15,6 +15,7 @@ import {
     useTheme,
 } from '@material-ui/core';
 import { Menu as MenuIcon } from '@material-ui/icons';
+import HomeIcon from '@material-ui/icons/Home';
 // import UserAvatar from './UserAvatar';
 
 type Props = {
@@ -24,7 +25,7 @@ type Props = {
 const useStyles = makeStyles((theme) => ({
     toolbar: {
         display: 'flex',
-        justifyContent: 'space-between',
+        // justifyContent: 'space-between',
         gap: '0 1rem',
     },
     link: {
@@ -65,7 +66,12 @@ function Header({ isLoggedIn, setIsLoggedIn }: Props) {
             <Toolbar className={classes.toolbar}>
                 <Typography variant="h6">
                     <Link to="/" className={classes.link}>
-                        Home
+                        <HomeIcon />
+                    </Link>
+                </Typography>
+                <Typography variant="h6">
+                    <Link to="/historicalTable" className={classes.link}>
+                        大盤指數
                     </Link>
                 </Typography>
                 {/* <Typography variant="h6">

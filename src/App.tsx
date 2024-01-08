@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter as BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
+import HistoricalTable from './pages/historicalTable';
 import Products from './pages/Products';
 import MahjongRules from './pages/MahjongRules';
 import Login from './pages/Login';
@@ -55,6 +56,7 @@ function App() {
         <Route path="/stock" element={<StockTable />} />
 
         <Route path="/b2c-chat-openai" element={<Home />} />
+        <Route path="/historicalTable" element={<HistoricalTable />} />
         <Route path="/products" element={<Products cartItems={cartItems} setCartItems={setCartItems} />} />
         <Route path="/mahjong" element={<MahjongRules />} />
         <Route path="/readme" element={<Readme />} />
