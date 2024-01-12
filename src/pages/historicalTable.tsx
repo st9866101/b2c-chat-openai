@@ -1,13 +1,9 @@
 
 import { Container, Typography, Card, CardContent, Divider, Table, TableContainer, TableHead, TableRow, TableCell, TableBody } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import React, { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+// import React, { useState, useEffect } from 'react';
 
-// 定義資料型別
-type TaiwanStock = {
-    name: string;
-    value: number;
-};
 
 // 建立假資料
 const fakeData = {
@@ -135,25 +131,21 @@ const useStyles = makeStyles({
 
 
 function HistoricalTable() {
-    const [tableData, setTableData] = useState([]);
+    // const [tableData, setTableData] = useState([]);
 
     const classes = useStyles();
 
-    // useEffect(() => {
-    //     // 使用 fetch 發送 GET 請求至台灣證券交易所 API
-    //     fetch('https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?response=json&_=' + Date.now())
-    //         .then(response => response.json())
-    //         .then(data => {
-    //             const responseData = data;
-    //             console.log(data, '台灣證券交易所 API')
-    //             // 更新 tableData 狀態
-    //             // setTableData(responseData);
-
-    //         })
-    //         .catch(error => {
-    //             console.error('Fetch Error:', error);
-    //         });
-    // }, []);
+    useEffect(() => {
+        // 使用 fetch 發送 GET 請求至台灣證券交易所 API
+        fetch('http://watbud.ddns.net:7777/api​/Stock​/getFiveLevelsOfStockInformation')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data, '路神API')
+            })
+            .catch(error => {
+                console.error('Fetch Error:', error);
+            });
+    }, []);
 
     return (
         <Container className={classes.root}>
