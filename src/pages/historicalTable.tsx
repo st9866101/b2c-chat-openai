@@ -130,14 +130,14 @@ const useStyles = makeStyles({
 });
 
 
-function HistoricalTable() {
+function HistoricalTable(stockCode= '3231') {
     // const [tableData, setTableData] = useState([]);
 
     const classes = useStyles();
 
     useEffect(() => {
         // 使用 fetch 發送 GET 請求至台灣證券交易所 API
-        fetch('http://watbud.ddns.net:7777/api​/Stock​/getFiveLevelsOfStockInformation')
+        fetch(`http://watbud.ddns.net:7777/api/Stock/getFiveLevelsOfStockInformation?stockCode=${stockCode}`)
             .then(response => response.json())
             .then(data => {
                 console.log(data, '路神API')
