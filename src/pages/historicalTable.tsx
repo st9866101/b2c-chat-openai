@@ -129,13 +129,21 @@ const useStyles = makeStyles({
     },
 });
 
+const HistoricalTable: React.FC<{ stockCode?: number }> = ({ stockCode = 3231 }) => {
 
-function HistoricalTable(stockCode= '3231') {
+
     // const [tableData, setTableData] = useState([]);
 
     const classes = useStyles();
 
     useEffect(() => {
+        console.log(
+            '%c historicalTable,HistoricalTable',
+            'color:#BB3D00;font-family:system-ui;font-size:2rem;font-weight:bold',
+            'stockCode:',
+            stockCode,
+          );
+      
         // 使用 fetch 發送 GET 請求至台灣證券交易所 API
         fetch(`http://watbud.ddns.net:7777/api/Stock/getFiveLevelsOfStockInformation?stockCode=${stockCode}`)
             .then(response => response.json())
