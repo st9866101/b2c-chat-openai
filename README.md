@@ -1,3 +1,17 @@
+# Getting Started with project
+
+### `npm install -g yarn`
+### `yarn install`
+### `yarn Start`
+Runs the app in the development mode.\
+Open [http://localhost:port] to view it in your browser.
+
+
+
+
+
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
